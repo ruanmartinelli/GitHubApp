@@ -8,12 +8,12 @@ import RepositoryList from './RepositoryList'
 export default class App extends Component {
   state = {
     query: graphql`
-      query AppQuery {
+      query AppQuery($login: String!, $count: Int) {
         ...RepositoryList
       }
     `,
     variables: {
-      count: 10,
+      count: 15,
       login: 'ruanmartinelli'
     }
   }

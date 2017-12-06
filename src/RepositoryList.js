@@ -9,7 +9,6 @@ class RepositoryList extends Component {
 
     return (
       <View>
-        <Text>{user.name}</Text>
         <FlatList
           data={user.repositories.edges}
           renderItem={({ item }) => (
@@ -26,10 +25,10 @@ export default createFragmentContainer(
   RepositoryList,
   graphql`
     fragment RepositoryList on Query {
-      user(login: "ruanmartinelli") {
+      user(login: $login) {
         name
         websiteUrl
-        repositories(first: 15) {
+        repositories(first: $count) {
           edges {
             node {
               id
