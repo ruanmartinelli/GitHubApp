@@ -53,3 +53,4 @@ buck-out/
 */fastlane/screenshots
 
 config.json
+__generated__/
