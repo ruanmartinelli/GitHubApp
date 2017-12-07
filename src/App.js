@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, TextInput } from 'react-native'
+import { StyleSheet, Text, View, Button } from 'react-native'
 import environment from './createRelayEnvironment'
 import { QueryRenderer, graphql } from 'react-relay'
 
@@ -13,27 +13,47 @@ export default class App extends Component {
       }
     `,
     variables: {
-      count: 15,
-      login: 'ruanmartinelli'
+      count: 10,
+      login: 'torvalds'
     }
+  }
+
+  _onPressButton = () => {
+    const users = ['torvalds', 'gaearon', 'feross', 'yyx990803', 'TheLarkInn']
+    const randomUser = users[Math.floor(Math.random() * users.length)]
+
+    this.setState({
+      variables: { count: 10, login: randomUser }
+    })
   }
 
   renderApp = ({ error, props }) => {
     if (error) {
       return (
-        <View>
+        <View style={styles.container}>
           <Text>Error</Text>
         </View>
       )
     } else if (props) {
       return (
-        <View>
-          <RepositoryList data={props} />
+        <View style={styles.container}>
+        <Text style={styles.login}>📂 {this.state.variables.login}</Text>
+
+          <View style={styles.listContainer}>
+            <RepositoryList data={props} />
+          </View>
+
+          <Button
+            style={styles.button}
+            onPress={this._onPressButton}
+            title="Random 🎲"
+            color="tomato"
+          />
         </View>
       )
     } else {
       return (
-        <View>
+        <View style={styles.container}>
           <Text>Loading...</Text>
         </View>
       )
@@ -54,6 +74,24 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10
+    flex: 1,
+    flexDirection: 'column',
+    padding: 50,
+    alignItems: 'center'
+  },
+  login: {
+    fontWeight: 'bold',
+    fontSize: 20
+  },
+  button: {
+    marginBottom: 50
+  },
+  listContainer: {
+    height: 310,
+    marginBottom: 30,
+    borderColor: '#d3d3d3',
+    padding: 3,
+    borderRadius: 2,
+    borderWidth: 2
   }
 })

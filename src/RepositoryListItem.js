@@ -7,8 +7,13 @@ class RepositoryListItem extends Component {
     const { repository } = this.props
 
     return (
-      <View>
-        <Text>{repository.name}</Text>
+      <View style={styles.pad}>
+        <Text style={styles.repoName}>{repository.name}</Text>
+        <Text style={styles.repoDesc}>
+          {repository.description
+            ? ` ${repository.description.substring(0, 50)}`
+            : ''}
+        </Text>
       </View>
     )
   }
@@ -19,7 +24,16 @@ export default createFragmentContainer(
   graphql`
     fragment RepositoryListItem_repository on Repository {
       name
+      description
       url
     }
   `
 )
+
+const styles = StyleSheet.create({
+  pad: {
+    padding: 3
+  },
+  repoName: { fontWeight: 'bold' },
+  repoDesc: { fontStyle: 'italic' }
+})
