@@ -28,7 +28,7 @@ export default createFragmentContainer(
       user(login: $login) {
         name
         websiteUrl
-        repositories(first: $count) {
+        repositories(last: $count) {
           edges {
             node {
               id
