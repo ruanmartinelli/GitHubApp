@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, TextInput, FlatList } from 'react-native'
-import { QueryRenderer, createFragmentContainer, graphql } from 'react-relay'
+import { View, FlatList } from 'react-native'
+import { createFragmentContainer, graphql } from 'react-relay'
 import RepositoryListItem from './RepositoryListItem'
 
 class RepositoryList extends Component {
-  render() {
+  render () {
     const { user } = this.props.data
 
     return (

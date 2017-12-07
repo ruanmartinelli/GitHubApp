@@ -37,7 +37,7 @@ export default class App extends Component {
     } else if (props) {
       return (
         <View style={styles.container}>
-        <Text style={styles.login}>📂 {this.state.variables.login}</Text>
+          <Text style={styles.login}>📂 {this.state.variables.login}</Text>
 
           <View style={styles.listContainer}>
             <RepositoryList data={props} />
@@ -46,8 +46,8 @@ export default class App extends Component {
           <Button
             style={styles.button}
             onPress={this._onPressButton}
-            title="Random 🎲"
-            color="tomato"
+            title='Random 🎲'
+            color='tomato'
           />
         </View>
       )
@@ -60,7 +60,7 @@ export default class App extends Component {
     }
   }
 
-  render() {
+  render () {
     return (
       <QueryRenderer
         environment={environment}

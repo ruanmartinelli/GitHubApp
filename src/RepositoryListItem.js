@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { createFragmentContainer, graphql } from 'react-relay'
-import { StyleSheet, Text, View, TextInput } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 
 class RepositoryListItem extends Component {
-  render() {
+  render () {
     const { repository } = this.props
 
     return (

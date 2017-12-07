@@ -1,7 +1,9 @@
+/* global fetch:false */
+
 import { Environment, Network, RecordSource, Store } from 'relay-runtime'
 import { GITHUB_TOKEN } from '../config.json'
 
-function fetchQuery(operation, variables) {
+function fetchQuery (operation, variables) {
   return fetch('https://api.github.com/graphql', {
     method: 'POST',
     headers: {
