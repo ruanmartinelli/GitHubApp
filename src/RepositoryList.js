@@ -27,7 +27,6 @@ export default createFragmentContainer(
     fragment RepositoryList on Query {
       user(login: $login) {
         name
-        websiteUrl
         repositories(last: $count) {
           edges {
             node {
