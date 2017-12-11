@@ -25,7 +25,6 @@ export default createFragmentContainer(
     fragment RepositoryListItem_repository on Repository {
       name
       description
-      url
     }
   `
 )
