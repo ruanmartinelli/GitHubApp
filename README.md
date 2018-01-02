@@ -26,3 +26,7 @@
 [our boilerplate]: https://github.com/entria/graphql-dataloader-boilerplate
 [Github]: https://developer.github.com/v4/
 [Yelp]: https://www.yelp.com/developers/platform
+
+### Thanks
+
+Big thanks to [@jgcmarins](https://github.com/jgcmarins), who helped with his GraphQL superpowers
