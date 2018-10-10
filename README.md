@@ -1,5 +1,7 @@
 # :octopus: GitHubApp
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ruanmartinelli/GitHubApp.svg)](https://greenkeeper.io/)
+
 > Simple React Native application that consumes the GitHub GraphQL API. Built for Entria's fullstack challenge.
 
 ### Base requirements
